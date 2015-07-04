@@ -1,0 +1,216 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp"
+    tools:context="mobilecomputing.ledracer.GameActivity"
+    android:background="#00334C">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:background="#00527A">
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/game_activity_score_size"
+                    android:text="@string/txt_score"/>
+
+             </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:textColor="@android:color/white"
+                    android:id="@+id/tvScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/game_activity_score_size"
+                    android:text="0"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_weight="0.03"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/game_activity_margin_line"
+            android:layout_marginRight="@dimen/game_activity_margin_line"
+            android:background="#002E4C"/>
+
+        <RelativeLayout
+            android:layout_weight="9"
+            android:background="#006699"
+            android:layout_height="0dp"
+            android:layout_width="fill_parent"
+            android:layout_marginTop="0dp">
+
+            <LinearLayout
+               android:id="@+id/gameOverContainer"
+               android:layout_width="fill_parent"
+               android:layout_height="fill_parent"
+               android:visibility="gone"
+               android:orientation="vertical">
+
+               <LinearLayout
+                   android:layout_weight="6"
+                   android:layout_width="match_parent"
+                   android:layout_height="0dp"
+                   android:orientation="vertical">
+
+                   <Space
+                       android:layout_weight="3"
+                       android:layout_width="fill_parent"
+                       android:layout_height="0dp" />
+
+                   <TextView
+                       android:textColor="@android:color/white"
+                       android:layout_weight="1"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Game"
+                       android:layout_gravity="center_horizontal"
+                       android:textStyle="bold"
+                       android:textSize="100sp" android:textAlignment="center"/>
+                   <TextView
+                       android:textColor="@android:color/white"
+                       android:layout_weight="1"
+                       android:layout_gravity="center_horizontal"
+                       android:layout_marginTop="-15pt"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Over!"
+                       android:layout_centerInParent="true"
+                       android:textStyle="bold"
+                       android:textSize="80sp" android:textAlignment="center"/>
+
+                   <Space
+                       android:layout_weight="10"
+                       android:layout_width="fill_parent"
+                       android:layout_height="0dp" />
+
+               </LinearLayout>
+               <LinearLayout
+                   android:background="@android:color/transparent"
+                   android:layout_marginLeft="10pt"
+                   android:layout_marginRight="10pt"
+                   android:layout_weight="1"
+                   android:layout_width="match_parent"
+                   android:layout_height="0dp"
+                   android:orientation="horizontal">
+
+                   <RelativeLayout
+                       android:layout_weight="1"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent">
+
+                       <Button
+                           android:background="@drawable/on_click_button"
+                           android:layout_marginLeft="5pt"
+                           android:layout_marginRight="5pt"
+                           android:textColor="@android:color/white"
+                           android:layout_width="fill_parent"
+                           android:layout_height="fill_parent"
+                           android:text="@string/text_menu"
+                           android:textSize="30sp"
+                           android:onClick="btnMenu_Click"
+                           android:layout_centerInParent="true" />
+
+                   </RelativeLayout>
+                   <RelativeLayout
+                       android:layout_weight="1"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent">
+
+                       <Button
+                           android:background="@drawable/on_click_button"
+                           android:layout_marginLeft="5pt"
+                           android:layout_marginRight="5pt"
+                           android:textColor="@android:color/white"
+                           android:layout_width="fill_parent"
+                           android:layout_height="fill_parent"
+                           android:text="@string/text_retry"
+                           android:textSize="30sp"
+                           android:onClick="btnRestart_Click"
+                           android:layout_centerInParent="true" />
+
+                   </RelativeLayout>
+
+               </LinearLayout>
+               <Space
+                   android:layout_weight="1"
+                   android:layout_width="match_parent"
+                   android:layout_height="0dp" />
+
+           </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ctrlContainer"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+
+                <ImageButton
+                    android:background="@android:color/transparent"
+                    android:id="@+id/ctrlLeft"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:onClick="moveLeft"
+                    android:src="@drawable/arrow_left"
+                    android:scaleType="fitCenter" android:padding="25pt"
+                    />
+                <View
+                    android:background="#00465F"
+                    android:layout_weight="0.010"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginBottom="36dp"/>
+                <ImageButton
+                    android:background="@android:color/transparent"
+                    android:id="@+id/ctrlRight"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:onClick="moveRight"
+                    android:src="@drawable/arrow_right"
+                    android:scaleType="fitCenter" android:padding="25pt"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

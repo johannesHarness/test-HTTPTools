@@ -1,0 +1,167 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#006699" >
+
+    <LinearLayout
+
+        android:background="@android:color/transparent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_weight="2"
+            android:layout_width="fill_parent"
+            android:layout_height="0pt"
+            android:orientation="vertical">
+
+
+            <Space
+                android:layout_weight="3"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_led"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="80sp" android:textAlignment="center"/>
+            <TextView
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-15pt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_racer"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"
+                android:textSize="100sp" android:textAlignment="center"/>
+
+            <Space
+                android:layout_weight="10"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_weight="0.01"
+            android:background="#00334C"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"/>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@android:color/white"
+            android:padding="4pt"
+            android:paddingRight="0pt">
+
+            <RelativeLayout
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent">
+
+                <EditText
+                    android:paddingLeft="8pt"
+                    android:background="@android:color/white"
+                    android:layout_marginTop="0pt"
+                    android:layout_marginBottom="0pt"
+                    android:id="@+id/txtLevel"
+                    android:inputType="number"
+                    android:hint="Enter Level"
+                    android:textSize="24sp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent">
+
+                <ImageButton
+                    android:id="@+id/btnStart"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter"
+                    android:src="@android:drawable/ic_media_play"
+                    android:onClick="startGame"
+                    android:background="@android:color/transparent"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_weight="0.01"
+            android:background="#00334C"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"/>
+
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:layout_width="fill_parent"
+            android:layout_height="0pt"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp" >
+
+                <TextView
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="8pt"
+                    android:text="@string/txt_info_choose_lvl"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/tvInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+
+            <ListView
+                android:id="@+id/lvHistory"
+                android:layout_weight="5"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="5dp" />
+
+            <Space
+                android:visibility="gone"
+                android:layout_weight="0.6"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

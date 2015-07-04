@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity"
+    android:background="#006699" >
+
+    <LinearLayout
+
+        android:background="@android:color/transparent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_weight="3"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp">
+            <TextView
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/white"
+                android:textSize="80sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_activity_settings"/>
+        </RelativeLayout>
+
+        <Space
+            android:layout_weight="1"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp" />
+
+        <RelativeLayout
+            android:layout_weight="8"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp">
+
+            <RelativeLayout
+                android:id="@+id/settings_container_device_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/txtNameOfDevice_container"
+                    android:background="@android:color/white"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:background="@android:color/white"
+                        android:id="@+id/txtNameOfDevice"
+                        android:layout_width="fill_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="42dp" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/tvNameOfDevice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_below="@id/txtNameOfDevice_container"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@android:color/white"
+                    android:text="Bluetooth device"/>
+
+             </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/settings_container_device_name"
+                android:id="@+id/settings_container_history_length"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/txtHistoryLength_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white">
+
+                    <EditText
+                        android:id="@+id/txtHistoryLength"
+                        android:inputType="number"
+                        android:layout_width="fill_parent"
+                        android:gravity="center"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="42dp"
+                        android:textSize="20sp"
+                        android:background="@android:color/white"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvHistoryLength"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtHistoryLength_container"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:text="History length"/>
+
+            </RelativeLayout>
+
+            <Button
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/on_click_button"
+                android:textColor="@android:color/white"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_settings_clear_database"
+                android:textSize="30sp"
+                android:onClick="btnResetDatabase_Click"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
