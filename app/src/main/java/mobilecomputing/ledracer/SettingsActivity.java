@@ -86,7 +86,7 @@ public class SettingsActivity extends Activity {
             int idx = this.adapterBTName.getPosition(currentValue);
 
             //if old device isn't paired anymore, set to first device (which exists because c > 0)
-            if(idx > -1) idx = 0;
+            if(idx < 0) idx = 0;
 
             this.spBTName.setAdapter(adapterBTName);
             this.spBTName.setSelection(idx);
